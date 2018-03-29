@@ -12,11 +12,25 @@ use Psr\Http\Message\ServerRequestInterface;
  */
 class App
 {
+
+    private $modules = [];
+
+    /**
+     * App constructor.
+     * @param array $modules
+     */
+    public function __construct(array $modules = [])
+    {
+        $router = new Router();
+        foreach($modules as $module) {
+            $this->modules[] = new $module();
+        }
+    }
+
     /**
      * @param ServerRequestInterface $request
      * @return ResponseInterface
      */
-
     public function run(ServerRequestInterface $request): ResponseInterface
     {
         $uri = $request->getUri()->getPath();
