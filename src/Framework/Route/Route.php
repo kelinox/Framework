@@ -27,7 +27,7 @@ class Route
      * @param callable $callable
      * @param array $params
      */
-    public function  __construct(string $name, callable $callable, array $params = [])
+    public function __construct(string $name, callable $callable, array $params = [])
     {
         $this->name = $name;
         $this->callable = $callable;

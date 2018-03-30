@@ -32,7 +32,7 @@ class App
     public function __construct(array $modules = [])
     {
         $this->router = new Router();
-        foreach($modules as $module) {
+        foreach ($modules as $module) {
             $this->modules[] = new $module($this->router);
         }
     }

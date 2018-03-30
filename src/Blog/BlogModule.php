@@ -3,6 +3,7 @@ namespace App\Blog;
 
 use Framework\Router;
 use Psr\Http\Message\ServerRequestInterface as Request;
+
 class BlogModule
 {
 
@@ -29,5 +30,4 @@ class BlogModule
     {
         return '<h1>Bienvenue sur l\'article ' .$request->getAttribute('slug') .'</h1>';
     }
-
 }

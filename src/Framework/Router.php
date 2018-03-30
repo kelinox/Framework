@@ -57,5 +57,4 @@ class Router
     {
         return $this->router->generateUri($name, $params);
     }
-
 }
