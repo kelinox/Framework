@@ -1,5 +1,5 @@
-<?= $renderer->render('header', ['title' => $slug]) ?>
+    <?= $renderer->render('header', ['title' => $slug]) ?>
 
-<h1>Bienvenue sur l'article <?= $slug ?></h1>
+    <h1>Bienvenue sur l'article <?= $slug ?></h1>
 
-<?= $renderer->render('footer') ?>
+    <?= $renderer->render('footer') ?>

@@ -13,8 +13,7 @@ class RendererTest extends TestCase
 
     public function setUp()/* The :void return type declaration that should be here would cause a BC issue */
     {
-        $this->renderer = new Renderer();
-        $this->renderer->addPath(__DIR__ . '/Views');
+        $this->renderer = new Renderer\PHPRenderer(__DIR__ . '/Views');
     }
 
     public function testRenderTheRightPath()

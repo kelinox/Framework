@@ -1,9 +1,13 @@
 <?php
 require '../vendor/autoload.php';
 
-$renderer = new \Framework\Renderer();
-$renderer->addPath(dirname(__DIR__) . '/Layout');
+use Framework\Renderer\TwigRenderer;
 
+
+$renderer = new TwigRenderer(dirname(__DIR__) . '/Layout');
+
+$loader = new Twig_Loader_Filesystem(dirname(__DIR__) . '/Layout');
+$twig = new Twig_Environment($loader, []);
 
 $app  = new \Framework\App([
     \App\Blog\BlogModule::class
