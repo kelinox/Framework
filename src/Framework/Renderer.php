@@ -26,7 +26,7 @@ class Renderer
      */
     public function addPath(string $namespace, ?string $path = null): void
     {
-        if(is_null($path)) {
+        if (is_null($path)) {
             $this->paths[self::DEFAULT_NAMESPACE] = $namespace;
         } else {
             $this->paths[$namespace] = $path;
@@ -44,7 +44,7 @@ class Renderer
      */
     public function render(string $view, array $params = []): string
     {
-        if($this->hasNamespace($view)) {
+        if ($this->hasNamespace($view)) {
             $path = $this->replaceNamespace($view) . '.php';
         } else {
             $path = $this->paths[self::DEFAULT_NAMESPACE] . DIRECTORY_SEPARATOR . $view . '.php';
@@ -74,7 +74,7 @@ class Renderer
 
     private function getNamespace(string $view): string
     {
-        return substr($view, 1, strpos($view,'/')-1);
+        return substr($view, 1, strpos($view, '/')-1);
     }
 
     private function replaceNamespace(string $view): string
@@ -82,5 +82,4 @@ class Renderer
         $namespace = $this->getNamespace($view);
         return str_replace('@' . $namespace, $this->paths[$namespace], $view);
     }
-
 }
