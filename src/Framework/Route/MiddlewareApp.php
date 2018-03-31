@@ -10,11 +10,15 @@ class MiddlewareApp implements MiddlewareInterface
 {
 
     /**
-     * @var callable
+     * @var string|callable
      */
     private $callback;
 
-    public function __construct(callable $callback)
+    /**
+     * MiddlewareApp constructor.
+     * @param string|callable $callback
+     */
+    public function __construct($callback)
     {
         $this->callback = $callback;
     }
@@ -30,9 +34,9 @@ class MiddlewareApp implements MiddlewareInterface
     }
 
     /**
-     * @return callable
+     * @return string|callable
      */
-    public function getCallback(): callable
+    public function getCallback()
     {
         return $this->callback;
     }
