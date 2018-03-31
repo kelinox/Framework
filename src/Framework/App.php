@@ -37,7 +37,7 @@ class App
      * @param ContainerInterface $container
      * @param array $modules
      */
-    public function __construct(ContainerInterface $container,array $modules = [])
+    public function __construct(ContainerInterface $container, array $modules = [])
     {
         $this->container = $container;
         foreach ($modules as $module) {
