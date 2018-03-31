@@ -6,7 +6,7 @@ use App\Blog\BlogModule;
 use Framework\App;
 use GuzzleHttp\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
-use Tests\Framework\Modules\ErroredModule;
+use Tests\FrameworkTest\Modules\ErroredModule;
 
 class AppTest extends TestCase {
 
@@ -47,6 +47,6 @@ class AppTest extends TestCase {
         ]);
         $request = new ServerRequest('GET','/demo');
         $this->expectException(\Exception::class);
-        $app->run();
+        $app->run($request);
     }
 }

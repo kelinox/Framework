@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Framework\Modules;
+namespace Tests\FrameworkTest\Modules;
 
 use Framework\Router;
 

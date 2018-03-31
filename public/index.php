@@ -1,12 +1,15 @@
 <?php
-
-use function Http\Response\send;
-
 require '../vendor/autoload.php';
+
+$renderer = new \Framework\Renderer();
+$renderer->addPath(dirname(__DIR__) . '/Layout');
+
 
 $app  = new \Framework\App([
     \App\Blog\BlogModule::class
+], [
+    'renderer' => $renderer
 ]);
 
 $response = $app->run(\GuzzleHttp\Psr7\ServerRequest::fromGlobals());
-send($response);
+Http\Response\send($response);
